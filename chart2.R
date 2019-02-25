@@ -17,7 +17,8 @@ scatter_plot <- function(csv_file) {
       x = ~world.happiness.report.score,
       text = ~ paste(indicator, "GDP(billions, PPP):", GDP, "World Happiness:",
                      world.happiness.report.score, sep = "<br />"),
-      hovertext = text
+      hovertext = text,
+      alpha = .7
       ) %>%
     layout(title = "Comparing developing countries GDP(Billions, PPP) and World Happiness Score",
            xaxis = list(title = "World Happiness Score"),
