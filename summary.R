@@ -3,7 +3,7 @@ library(dplyr)
   View(data)
   data <- data[-c(1:4),]
   data[data == "-"] <- NA
-summary <- function(dataset) {
+  summary <- function(dataset) {
   dataset <- dataset[-c(1:4),]
   dataset[dataset == "-"] <- NA
   dataset <- type.convert(dataset, na.strings = "NA", as.is = TRUE, dec = ".",
