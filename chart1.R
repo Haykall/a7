@@ -11,7 +11,7 @@ my_plot <- function(file_csv) {
   dataset$health.expenditure <- 
     as.numeric(as.character(dataset$health.expenditure))
   dataset$education.expenditure <- 
-    as.numeric(as.character(datset$education.expenditure))
+    as.numeric(as.character(dataset$education.expenditure))
   
   lowest_hdi <- dataset %>%
     select(indicator, human.development.index, education.expenditure, 
