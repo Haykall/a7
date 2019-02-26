@@ -5,12 +5,13 @@ library("tidyr")
 library("styler")
 library("lintr")
 
-world_data_viz <- read.csv("WDVP Datasets - small countries are 
-                           beautiful 6.51.37 PM.csv",
+world_data_viz <- read.csv(
+"WDVP Datasets - small countries are beautiful 6.51.37 PM.csv",
   stringsAsFactors = FALSE
 )
 
-my_plot <- function(dataset) {
+my_plot <- function(file_csv) {
+  dataset <- read.csv(file_csv, stringsAsFactors = F)
   dataset$health.expenditure <- 
     as.numeric(as.character(world_data_viz$health.expenditure))
   dataset$education.expenditure <- 
@@ -58,4 +59,4 @@ my_plot <- function(dataset) {
   )
 }
 
-vary <- my_plot(world_data_viz)
+result <- my_plot("WDVP Datasets - small countries are beautiful 6.51.37 PM.csv")
