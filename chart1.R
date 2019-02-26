@@ -53,6 +53,9 @@ my_plot <- function(file_csv) {
     with the top 5 lowest HDI ",
     x = "Indicators", y = "Expenditure Scale"
   )
+  
+  low_final_plot
+  high_final_plot
 }
 
 
