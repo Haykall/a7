@@ -1,10 +1,7 @@
 library(dplyr)
-library(lintr)
-#reads in the given data
-data <- read.csv("WDVP Datasets - small countries are beautiful 6.51.37 PM.csv",
-                 stringsAsFactors = FALSE)
 #creates the function to extract data
-summary <- function(dataset) {
+summary <- function(file) {
+  dataset <- read.csv(file, stringsAsFactors = FALSE)
   #removes the description rows with no numbers
   dataset <- dataset[-c(1:4), ]
   #converts blank cells with "-" with an NA instead
@@ -41,5 +38,3 @@ summary <- function(dataset) {
   ret$happy_top5 <- happy %>% pull(indicator)
   ret
   }
-#Run the function with the data
-test1 <- summary(data)
