@@ -9,9 +9,9 @@ library("lintr")
 my_plot <- function(file_csv) {
   dataset <- read.csv(file_csv, stringsAsFactors = F)
   dataset$health.expenditure <- 
-    as.numeric(as.character(world_data_viz$health.expenditure))
+    as.numeric(as.character(dataset$health.expenditure))
   dataset$education.expenditure <- 
-    as.numeric(as.character(world_data_viz$education.expenditure))
+    as.numeric(as.character(datset$education.expenditure))
   
   lowest_hdi <- dataset %>%
     select(indicator, human.development.index, education.expenditure, 
