@@ -1,8 +1,5 @@
 library(dplyr)
   data <- read.csv("WDVP Datasets - small countries are beautiful 6.51.37 PM.csv", stringsAsFactors = FALSE)
-  View(data)
-  data <- data[-c(1:4),]
-  data[data == "-"] <- NA
   summary <- function(dataset) {
   dataset <- dataset[-c(1:4),]
   dataset[dataset == "-"] <- NA
@@ -11,7 +8,6 @@ library(dplyr)
   ret <- list()
   ret$no_countries <- nrow(dataset)
   max_pop <- dataset %>% filter(population == "5,000,000")
-  View(max_pop)
   ret$max_pop <- max_pop %>% pull(indicator)
   ret$max_pop_amount <- max_pop %>% pull(population)
   min_pop <- dataset %>% filter(population == "100,000")
@@ -32,9 +28,3 @@ library(dplyr)
   ret
 }
 test1 <- summary(data)
-str(data)
-min <- data %>% select(indicator, population) %>% arrange(desc(population))
-View(min)
-data <- data %>% mutate(pop = as.numeric(population))
-View(data)
-max(data$population)
