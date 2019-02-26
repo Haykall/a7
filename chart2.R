@@ -2,7 +2,6 @@
 library(dplyr)
 library(plotly)
 
-data_set <- read.csv("WDVP Datasets - small countries are beautiful 6.51.37 PM.csv")
 
 # Function that makes the scatter plot comparing Happiness and GDP of developing countries
 scatter_plot <- function(csv_file) {
@@ -25,4 +24,3 @@ scatter_plot <- function(csv_file) {
            yaxis = list(title = "GDP (Billions, PPP)"))
   happiness_plot
 }
-scatter_plot("WDVP Datasets - small countries are beautiful 6.51.37 PM.csv")

@@ -41,7 +41,6 @@ plot_3 <- function(file) {
   combined <- full_join(top_5, low_5)
 
   # Plot bar graph comparine dev levels to happiness scores
-
   colors <- c("#0072B2", "#FF9999")
 
   dev_happy_plot <- ggplot(data = combined, aes(x = mean_dev, y = mean_happy)) +
