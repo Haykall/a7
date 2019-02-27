@@ -36,11 +36,10 @@ my_plot <- function(file_csv) {
     position = "dodge"
   ) + scale_color_brewer(palette = "Set3") + labs(
     title = "Comparing health  and education expenditure on the countries 
-    with the top 5 lowest HDI ",
+    with the top 5 highest HDI ",
     x = "Indicators", y = "Expenditure Scale"
   )
   
   high_final_plot
 }
-
 
