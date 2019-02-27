@@ -16,22 +16,22 @@ my_plot <- function(file_csv) {
   
   #filter dataset to show the countries with the lowest human development index
   #along with their respective health expenditure and education expenditure
-  lowest_hdi <- dataset %>%
+  highest_hdi <- dataset %>%
     select(indicator, human.development.index, education.expenditure, 
            health.expenditure) %>%
-    arrange(desc(human.development.index)) %>%
+    arrange(human.development.index) %>%
     filter(human.development.index < 1 & human.development.index > 0.3) %>%
     head(5)
 
   #determine what information is displayed on the plot, what fills the bar
   # chart
-  low_plot <- lowest_hdi %>% gather(
+  high_plot <- highest_hdi %>% gather(
     key = expenditure, value = health.expenditure,
     -indicator, -human.development.index
   )
   
   #plot the highest hdi countries, comparing health and education expenditure
-  low_final_plot <- ggplot(low_plot) + geom_col(
+  high_final_plot <- ggplot(high_plot) + geom_col(
     mapping = aes(x = indicator, y = health.expenditure, fill = expenditure),
     position = "dodge"
   ) + scale_color_brewer(palette = "Set3") + labs(
@@ -40,6 +40,6 @@ my_plot <- function(file_csv) {
     x = "Indicators", y = "Expenditure Scale"
   )
   
-  low_final_plot
+  high_final_plot
 }
 
