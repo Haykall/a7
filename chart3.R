@@ -38,7 +38,7 @@ plot_3 <- function(file) {
     ) %>%
     mutate(type = "Least Developed")
 
-  combined <- full_join(top_5, low_5)
+  combined <- full_join(top_5, low_5, by = c("mean_dev", "mean_happy", "type"))
 
   # Plot bar graph comparine dev levels to happiness scores
   colors <- c("#0072B2", "#FF9999")
@@ -55,3 +55,5 @@ plot_3 <- function(file) {
 
   dev_happy_plot
 }
+
+plot_3("WDVP Datasets - small countries are beautiful 6.51.37 PM.csv")
